@@ -1,6 +1,6 @@
 ---
 title: Jekyll Titles via FrontMatter work!
-layout: post
+layout: home
 ---
 
 TODO: Use jekyll links<br>
