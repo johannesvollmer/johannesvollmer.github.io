@@ -3,22 +3,13 @@
 
 # About
 
-This 'Game of Life' website was programmed by Johannes Vollmer for a
+This 'Game of Life' website was programmed for a
 [code competition hosted by IT-Talents.de in 2017](https://www.it-talents.de/foerderung/code-competition/code-competition-09-2017)
-
-**Unfortunately, the only computer I own broke
-four days before the end of the contest.
-Luckily, a friend allowed me to use his macbook to
-fix some important bugs two days before submission.
-If I win this contest, I will use the money to buy a working laptop.**
-
-
-
 
 # Installing And Running
 
 This project requires no installation.
-To start the game, simply open the file called `index.html`
+To start the game, simply open the file called `index.html`, or visit [the online version](https://johannesvollmer.github.io/webgl-of-life/).
 in the latest Mozilla Firefox or Google Chrome.
 
 It was tested with Firefox 52.2.0 and Chrome 60.0.3112.78 on Debian Linux x64,
