@@ -1,28 +1,50 @@
-# Site settings
-title:          Tale
-description:    "Minimal Jekyll theme for storytellers"
-baseurl:        "/tale"
-url:            "https://chesterhow.github.io"
+# Basic
+name:               "Johannes Vollmer"
+description:        "Coding is like eating lemons, but different"
 
-# Author
-author:
-  name:         Chester How
-  url:          https://chester.how
-  email:        chesterhow@gmail.com
+# jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
+url:                "//johannesvollmer.github.io"
+author:             "johannesvollmer"
+#twitter:
+#  username:         "gfjaru"
+#facebook:
+#  app_id:           1234
+#    publisher:      1234
 
-# Build settings
-markdown:       kramdown
+# URL
+baseurl:            ""
+#baseurl:            "" #For Root Domain
+permalink:          /:year/:month/:day/:title/
 
-# Assets
+# Markdown
+markdown:           kramdown
+
+# Navigation
+nav:
+  - name:           "About"
+    href:           "/about"
+    
+  - name:           "Game of Life"
+    href:           "/webgl-of-life"
+
+# Sass
 sass:
-  sass_dir:     _sass
-  style:        compressed
+  style:            :compressed
 
-# Gems
-plugins:
-  - jekyll-paginate
-  # - jemoji #Uncomment this to allow emoji in your post
+# Scopes
+defaults:
+  -
+    scope:
+      path:         ""
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      path:         ""
+      type:         "posts"
+    values:
+      layout:       "post"
 
-# Permalinks
-permalink:      /:year-:month-:day/:title
-paginate:       5
+gems:
+  - jekyll-seo-tag
