@@ -2,7 +2,7 @@
 title: Don't be a Bracist
 # jekyll-seo-tag
 description:  "Why the world is treating braces differently from parantheses"
-image:        "http://placehold.it/400x200" # why nothing visible?
+#image:        "http://placehold.it/400x200" # why nothing visible?
 author:       "johannesvollmer"
 ---
 
