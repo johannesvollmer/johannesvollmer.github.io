@@ -17,7 +17,7 @@ author:       "johannesvollmer"
 I hope it's afternoon for you, because that's when people eat cake and drink coffee. 
 Anyways. Nice to have you here. Also, let's talk about OpenGL, and how I used it to compute Conway's Game of Life in my browser :)
 
-__Check out [the finished Game of Life on my website](johannesvollmer.github.io/webgl-of-life)__,
+__Check out [the finished Game of Life on my website](//johannesvollmer.github.io/webgl-of-life)__,
 
 or read the source code any time by visiting the [project on Github](https://github.com/johannesvollmer/webgl-of-life).
 
