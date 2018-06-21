@@ -14,7 +14,8 @@ author:             "johannesvollmer"
 # URL
 baseurl:            ""
 #baseurl:            "" #For Root Domain
-permalink:          /:year/:month/:day/:title/
+#permalink:          /:year/:month/:day/:title/
+permalink:          /:year/:title/
 
 # Markdown
 markdown:           kramdown
