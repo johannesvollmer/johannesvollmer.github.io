@@ -87,11 +87,69 @@ if(!window.gl)
 	alert("WebGL could not be loaded. Please use a browser which supports WebGL.")
 
 ```
+See it in context on github: [index.js](https://github.com/johannesvollmer/webgl-of-life/blob/master/js/index.js)
+
+
+Because we want to fill the whole screen with our drawings, we will keep the resolution of the context the same as the window size (We need this later to correctly determine the mouse position):
+``` javascript
+// update the size of the webgl canvas to be full-width and full-height
+function onCanvasResize(){
+	canvas.width = window.innerWidth
+	canvas.height = window.innerHeight
+	// to do: re-draw all contents after resizing
+}
+
+// register our function, and
+window.addEventListener('resize', onCanvasResize, {passive: true})
+
+// trigger once to initialize the canvas' size
+onCanvasResize() 
+```
 Github: [index.js](https://github.com/johannesvollmer/webgl-of-life/blob/master/js/index.js)
 
-<!-- ![Large example image](http://placehold.it/800x400 "Large example image") -->
+The event listener being `passive` prevents blocking the browsers rendering. Read [this article on medium.com](https://medium.com/@devlucky/about-passive-event-listeners-224ff620e68c) if you want to learn more.
+
+The problem with non-fullsize canvases is, that it's (sadly) still not possible to transform coordinates between dom elements. To correctly determine the local mouse position of an element, you'd have to manually go through all parents of the element, and add all their positions, margins, paddings, translations, rotations, and scalings. There is a [non-standard webkit-only function](https://developer.mozilla.org/en-US/docs/Web/API/Window/convertPointFromPageToNode) that would enable us to simply call one single function to convert between element coordinate spaces, but it's not implemented in most browsers.
+
+Anyways, we have our WebGL canvas. Now we need to create some cells, which we can load into a texture later. 
+``` javascript
+// the grid of cells, 255 is alive, 0 is dead
+let width = 4
+let height = 4
+let cell_data = new Uint8Array([
+	0,   0, 255, 0,
+	0, 255,   0, 0,
+	0, 255, 255, 0,
+	0,   0,   0, 0,
+])
+```
 
 
+Now we need a texture, containing the actual cell data. Because the WebGL context is now contained in `window.gl`, we can simply call `gl.createTexture()` to obtain a handle to the texture which was created on the GPU. But to fill in our cell-data, we need to bind the texture first.
+``` javascript
+const cell_texture_id = gl.createTexture()
+gl.bindTexture(gl.TEXTURE_2D, cell_texture_id)
+
+// transfer only one byte at once, because otherwise our texture dimensions would have to be perfectly divisible by some arbitrary number like 4 or 8 
+gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1)
+gl.pixelStorei(gl.PACK_ALIGNMENT, 1)
+
+gl.texImage2D(
+	gl.TEXTURE_2D,
+	0, // mip map level
+	gl.LUMINANCE, // format, LUMINANCE = one value per pixel
+	width,
+	height,
+	0, // border size in px
+	format,
+	gl.UNSIGNED_BYTE, // data type of each r,g,b, or luminance, UNSIGNED_BYTE = 8bit, values are 0-255
+	cell_data 	// actual content (uint8array, or image element, or canvas element, or imagebitmap)
+)
+```
+Because binding and unbinding textures is such a common task, I wrote a simple abstraction function called `Texture2D`. You can look it up on github: [Texture.js](https://github.com/johannesvollmer/webgl-of-life/blob/master/js/gl/Texture.js)
+
+
+Great! Now we have the data in our texture. 
 
 
 # Also, look at
