@@ -130,26 +130,26 @@ function setup(){
 	}
 
 
-
-	function listen(element, eventType, options, listener){
-		element.addEventListener(eventType, listener, options)
-		listener()
-	}
-
 	// read the view and update the model manually
 	// (which would not be necessary if changing values via JS
 	// would trigger 'change'-event-listeners)
 
-	// changing the rules makes the current generation our initial generation
 	// updating the rules for our game
-	listen(surviveRules, 'click', {passive: true}, () => {
+	function updateSurviveRules(){
 		board.setSurviveRule(getRules('survive'))
-	})
+	}
+	// changing the rules makes the current generation our initial generation
+	// {passive: true}  can have better performance
+	// but can only be used when e.preventDefault() is not called
+	surviveRules.addEventListener('click', updateSurviveRules, {passive: true})
+	updateSurviveRules() // do it once for initialization
 
 
-	listen(reviveRules, 'click', {passive: true}, () => {
+	function updateReviveRules(){
 		board.setReviveRule(getRules('revive'))
-	})
+	}
+	reviveRules.addEventListener('click', updateReviveRules, {passive: true})
+	updateReviveRules()
 
 
 	function setBoardDimensions(width, height){
@@ -261,12 +261,15 @@ function setup(){
 	// keep the canvas fullscreen at all times
 	// otherwise, it will look blurry and
 	// and mouse events will not contain any meaningfull coordinates
-	listen(window, 'resize', {passive: true}, () => {
+	function onCanvasResize(){
 		canvas.width = window.innerWidth
 		canvas.height = window.innerHeight
 		boardView.onCanvasResized(canvas)
 		painterPreview.onCanvasResized(canvas)
-	})
+	}
+	window.addEventListener('resize', onCanvasResize, {passive: true})
+	onCanvasResize() // trigger once to initialize
+
 
 	// disable the reset-button if there is nothing to reset
 	let resetEnabled = false
@@ -351,17 +354,27 @@ function setup(){
 
 	}, {passive: true})
 
-	listen(transition, 'click', {passive: true}, () => {
+
+	function updateTransition(){
 		boardView.setUseTransition(transition.checked)
-	})
+	}
+	transition.addEventListener('click', updateTransition, {passive: true})
+	updateTransition()
 
-	listen(speed, 'change', {passive: true}, () => {
+
+	function updateAnimationSpeed(){
 		boardView.setGenerationsPerSecond(speed.value)
-	})
+	}
+	speed.addEventListener('change', updateAnimationSpeed, {passive: true})
+	updateAnimationSpeed()
 
-	listen(zoomSensitivity, 'change', {passive: true}, () => {
+
+	function updateZoomSensitivity(){
 		viewMotionDetector.scaleSensitivity = 0.003 * zoomSensitivity.value
-	})
+	}
+	zoomSensitivity.addEventListener('change', updateZoomSensitivity, {passive: true})
+	updateZoomSensitivity()
+
 
 	// if enabled, this increments the generation continuously over time
 	// which is controlled by the play/pause button
@@ -373,7 +386,9 @@ function setup(){
 		animate.checked = enabled
 		updateAnimateGenerations()
 	}
-	listen(animate, 'click', {passive: true}, updateAnimateGenerations)
+	animate.addEventListener('click', updateAnimateGenerations, {passive: true})
+	updateAnimateGenerations()
+
 
 	// stop animation, when switching tabs or minimizing window
 	window.addEventListener('blur', e => setAnimateGenerations(false), {passive: true})
@@ -403,7 +418,9 @@ function setup(){
 		grid.checked = enabled
 		updateGrid()
 	}
-	listen(grid, 'click', {passive: true}, updateGrid)
+	grid.addEventListener('click', updateGrid, {passive: true})
+	updateGrid()
+
 
 	// single generation increment
 	function incrementGeneration(){
@@ -418,13 +435,16 @@ function setup(){
 	function resetViewToInitial(){
 		viewMotionDetector.reset()
 	}
-	listen(resetView, 'click', {passive: true}, resetViewToInitial)
+	resetView.addEventListener('click', resetViewToInitial, {passive: true})
+	resetViewToInitial()
 
 
 	// show or hide settings, depending on toolbar checkbox
-	listen(showSettings, 'click', {passive: true}, () => () => {
+	function updateShowSettings(){
 		settings.classList[showSettings.checked? 'remove' : 'add']('hidden')
-	})
+	}
+	showSettings.addEventListener('click', updateShowSettings, {passive: true})
+	updateShowSettings()
 
 
 	// brush mode settings (invert, add, remove)
@@ -473,8 +493,9 @@ function setup(){
 		paint.checked = enabled
 		updatePaintMode()
 	}
-	
-	listen(paint, 'click', {passive: true}, updatePaintMode)
+	paint.addEventListener('click', updatePaintMode, {passive: true})
+	updatePaintMode()
+
 
 	// generate dom for the paintbrush selection
 	function generateBrushPatterns(){
@@ -565,7 +586,7 @@ function setup(){
 		}
 	}
 
-	// register shortcut triggering
+	// shortcut triggering
 	window.addEventListener('keydown', e => {
 		// do not override textbox keydown
 		if(e.target.tagName.toLowerCase() !== 'input'){
