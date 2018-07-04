@@ -415,7 +415,10 @@ function setup(){
 
 
 	// reset camera to full-screen-board
-	listen(resetView, 'click', {passive: true}, () => viewMotionDetector.reset())
+	function resetViewToInitial(){
+		viewMotionDetector.reset()
+	}
+	listen(resetView, 'click', {passive: true}, resetViewToInitial)
 
 
 	// show or hide settings, depending on toolbar checkbox
