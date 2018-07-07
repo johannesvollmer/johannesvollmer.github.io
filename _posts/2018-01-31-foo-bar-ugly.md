@@ -11,18 +11,18 @@ author:       "johannesvollmer"
 When I learned my first programming language, Java, I just threw my questions into google. The web&#8482; offers tons of helpful guides, and of course we all know StackOverflow, but theres a minor problem with many of them.
 
 
-##Code Examples
+## Code Examples
 
 Examples are undeniably one of the most effective way of learning. They are essential for any programming tip, tutorial, or guide. Glady, the majority of guides do have them.
 
-##Specifically: Bad Code Examples
+## Specifically: Bad Code Examples
 
 Unfortunately, someone once decided it was a good idea to do code examples using completely fictional identifiers without any meaning; the good, the bad, the ugly: `Foo`, `Bar`, and `Baz`. 
 
 > They have been used to name entities such as variables, functions, and commands whose exact identity is unimportant and serve only to demonstrate a concept. *[Wikipedia](https://en.wikipedia.org/w/index.php?title=Foobar&oldid=804411222)*
 
 
-##Why are these words bad?
+## Why are these words bad?
 
 Let's have a look at an example of (an example using these keywords). OMG so meta! 
 This example demonstrates how __interfaces__ in Java work:
@@ -56,7 +56,7 @@ Admit it: You didn't _really_ read this example. It's just not fun to read. Rela
 
 A key property of examples is that they can be related to. Thus, choosing a fictional and meaningless word contradicts the very definition of 'example'. By using `Foo`, you fail to provide context. 
 
-##What should we do instead?
+## What should we do instead?
 
 Wouldn't this example of interfaces be much easier to understand:
 ```java
@@ -95,7 +95,7 @@ In my opinion, when trying to explain a concept, one should do all that can be d
 
 
 
-##Conclusion
+## Conclusion
 - Foo and Bar do not provide context
 - Examples should provide as much context as possible
 - Foo and Bar are uncreative and boring
