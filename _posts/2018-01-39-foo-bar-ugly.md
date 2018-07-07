@@ -2,6 +2,7 @@
 title: The Foo, the Bar, the Ugly
 description: Improving code examples
 # tags: mentoring, java, foo, teaching
+author:       "johannesvollmer"
 ---
 
 *Note: I originally wrote this post for [dev.to](https://dev.to/ryanous/the-foo-the-bar-the-ugly-5c71).*
