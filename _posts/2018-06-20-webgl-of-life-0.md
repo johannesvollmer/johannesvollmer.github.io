@@ -4,6 +4,7 @@ title:        "(Ab)using WebGL to simulate Conway's Game of Life"
 description:  "Utilizing the parallelization of the GPU for simulation of cellular automatons"
 #image:        "http://placehold.it/400x200" # why nothing visible?
 author:       "johannesvollmer"
+published: 	  false
 ---
 *Utilizing the parallelization of the GPU for simulation of cellular automatons*
 <!-- TODO: in the website template, add the frontmatter description as sub title in the post -->
