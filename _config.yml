@@ -27,6 +27,9 @@ nav:
     
   - name:           "Game of Life"
     href:           "/webgl-of-life"
+    
+  - name:           "Regex Nodes"
+    href:           "/regex-nodes-js"
 
 # Sass
 sass:
