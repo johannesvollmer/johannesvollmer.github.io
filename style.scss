@@ -268,6 +268,8 @@ tbody tr:nth-child(odd) th {
 #logo {
   display: inline-block;
   width: 100px;
+  margin-bottom: -100%;
+  transform: translate(-110px, 0px);
 }
 
 .masthead {
@@ -313,9 +315,6 @@ tbody tr:nth-child(odd) th {
       color: #aaa;
       font-weight: 300;
       text-transform: lowercase;
-      -webkit-transition: all .2s ease;
-         -moz-transition: all .2s ease;
-              transition: all .2s ease;
 
       &:hover,
       &:focus {
