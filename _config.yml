@@ -29,7 +29,7 @@ nav:
     href:           "/webgl-of-life"
     
   - name:           "Regex Nodes"
-    href:           "/regex-nodes-js"
+    href:           "/regex-nodes"
 
 # Sass
 sass:
