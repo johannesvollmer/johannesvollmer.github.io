@@ -270,6 +270,7 @@ tbody tr:nth-child(odd) th {
 }
 
 .logo-column {
+  flex-shrink: 0; /* do not shrink logo */
   width: 100px;
   padding: 12px;
   transform: translate(0px, -6px);
