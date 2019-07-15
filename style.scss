@@ -263,6 +263,10 @@ tbody tr:nth-child(odd) th {
   @media (min-width: 38rem){
     padding: 5rem 1rem;
   }
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 .logo-column {
@@ -271,10 +275,6 @@ tbody tr:nth-child(odd) th {
 
 #logo {
   width: 100%;
-}
-
-.content-column {
-  width: 80%;
 }
 
 
