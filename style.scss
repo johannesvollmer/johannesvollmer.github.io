@@ -180,11 +180,7 @@ pre {
   padding: 1rem;
   font-size: .8rem;
   line-height: 1.4;
-  white-space: pre;
-  white-space: pre-wrap;
-  word-break: break-all;
-  // TODO: do not break code lines
-  // word-wrap: break-word;
+  overflow-x: scroll; // do not break code lines
   background-color: #f9f9f9;
 }
 
