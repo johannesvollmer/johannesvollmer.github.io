@@ -254,7 +254,7 @@ tbody tr:nth-child(odd) th {
   font-size: 1.25rem;
 }
 
-.container, #logo {
+.container {
   max-width: 38rem;
   padding: 2rem 1.5rem;
   margin-left:  auto;
@@ -266,8 +266,8 @@ tbody tr:nth-child(odd) th {
 }
 
 #logo {
+  display: inline-block;
   width: 100px;
-  transform: translate(-100px, 0px);
 }
 
 .masthead {
