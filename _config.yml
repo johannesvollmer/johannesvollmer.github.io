@@ -1,6 +1,6 @@
 # Basic
 name:               "Johannes Vollmer"
-description:        "Coding is like eating lemons, but different"
+description:        "Not yet famous enough for hand-signed distance fields"
 
 # jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
 url:                "//johannesvollmer.github.io"
@@ -22,6 +22,9 @@ markdown:           kramdown
 
 # Navigation
 nav:
+  - name:           "Github"
+    href:           "https://github.com/johannesvollmer"
+
   - name:           "About"
     href:           "/about"
     
