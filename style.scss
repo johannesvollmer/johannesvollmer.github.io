@@ -265,12 +265,18 @@ tbody tr:nth-child(odd) th {
   }
 }
 
-#logo {
-  display: inline-block;
-  width: 100px;
-  margin-bottom: -100%;
-  transform: translate(-110px, 0px);
+.logo-column {
+  width: 20%;
 }
+
+#logo {
+  width: 100%;
+}
+
+.content-column {
+  width: 80%;
+}
+
 
 .masthead {
 
