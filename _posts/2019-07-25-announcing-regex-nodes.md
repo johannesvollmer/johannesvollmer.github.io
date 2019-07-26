@@ -94,6 +94,18 @@ on the interface design, I will explain the basic functionality here.
    link this editor in a comment right next to the regular expression.
 
 
+# Troubleshooting
+
+1. Problem: The editor does not work in realtime 
+   because clicking a node stops the editor for a significant amount of time. 
+
+   Try: Reduce the length of the example text. 
+   A shorter text will need less time to highlight all matches
+   when a node is selected.
+
+   Alternatively, lower the "Example Match Limit" while editing the example text.
+   This will prevent the editor from highlighting more than X matches.
+
 # Finally
 
 Thanks for reading! I hope you will find this editor useful 
