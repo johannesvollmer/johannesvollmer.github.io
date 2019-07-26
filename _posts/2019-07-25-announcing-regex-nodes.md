@@ -8,7 +8,7 @@ author:       "johannesvollmer"
 
 Hey! In this post, I am going to present to you 
 what I have built to simplify creating regular expressions for JavaScript:
-[Regex Nodes]((https://johannesvollmer.github.io/regex-nodes/)).
+[Regex Nodes](https://johannesvollmer.github.io/regex-nodes/).
 
 *Warning: The presented project is still work in progress and some features
 might be missing or may not work as intended. See the 
@@ -52,7 +52,7 @@ The rightmost node is the top-level operator, which combine the atomic
 nodes on the left hand side to a single regular expression.
 
 To construct and play around with that node setup yourself,
-simply visit [the online editor]((https://johannesvollmer.github.io/regex-nodes/)), 
+simply visit [the online editor](https://johannesvollmer.github.io/regex-nodes/), 
 paste the expression `/<img.*?>/gim` into the "Add Nodes" text box,
 and then click the first suggestion.
 Be aware that padding spaces in the regular expression 
