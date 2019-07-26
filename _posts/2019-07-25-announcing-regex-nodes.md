@@ -54,7 +54,10 @@ nodes on the left hand side to a single regular expression.
 To construct and play around with that node setup yourself,
 simply visit [the online editor](https://johannesvollmer.github.io/regex-nodes/), 
 paste the expression `/<img.*?>/gim` into the "Add Nodes" text box,
-and then click the first suggestion.
+and then click the first suggestion. To see how the regex works,
+you will also have to edit the example text 
+by clicking the button at the top right and paste some HTML, as 
+the default example text does not contain any image tags.
 Be aware that padding spaces in the regular expression 
 will not be ignored and may lead to unexpected results.
 
