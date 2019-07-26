@@ -64,15 +64,19 @@ will not be ignored and may lead to unexpected results.
 # Why Nodes?
 
 Nodes are more verbose than a textual regex, 
-but can be easier to read for complex expressions.
+but enable you to understand even the most complex expressions.
 Also, the design of the editor will naturally prevent you 
 from accidentally producing an incorrect regular expression. 
+
+This really sets regex nodes apart from other regex tools, where
+the user must first come up with a regular expression
+that will be checked afterwards.
 
 
 # Basic Editor Functionality
 
 As I have not yet done any user experience research 
-on the interface design, I will explain the basic functionality here.
+on the interface design, I will explain the basic functionality here:
 
 1. __Select a node__ by clicking with your left mouse button. 
    Selecting a node will display its regular expression at the bottom. 
