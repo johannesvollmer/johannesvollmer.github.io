@@ -86,6 +86,12 @@ on the interface design, I will explain the basic functionality here.
 1. __Edit the example text__ which is displayed in the background 
    by clicking on the button at the top right.
 1. __Undo and redo__ your actions with the arrows at the top.
+1. __Duplicate or delete a node__ by selecting it and then clicking the 
+   respective button at the top of the node which just appeared.
+1. Select and CTRL-C copy the resulting regular expression 
+   and paste it into your JavaScript code. 
+   If you like this project, 
+   link this editor in a comment right next to the regular expression.
 
 
 # Finally
