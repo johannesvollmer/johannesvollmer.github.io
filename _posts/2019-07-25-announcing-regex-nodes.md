@@ -66,7 +66,7 @@ Also, the design of the editor will naturally prevent you
 from accidentally producing an incorrect regular expression. 
 
 
-# Basic Editor Functionality <!--TODO link this header from the editor-->
+# Basic Editor Functionality
 
 As I have not yet done any user experience research 
 on the interface design, I will explain the basic functionality here.
