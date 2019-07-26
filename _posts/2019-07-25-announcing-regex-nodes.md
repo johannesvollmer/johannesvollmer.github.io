@@ -1,5 +1,5 @@
 ---
-title: Announcing "Regex Nodes", an online Editor for Regular Expressions
+title: Announcing Regex Nodes, an online Editor for Regular Expressions
 # jekyll-seo-tag
 description:  "Visualizing and editing regular expressions in the web"
 #image:        "http://placehold.it/400x200" # why nothing visible?
@@ -7,11 +7,12 @@ author:       "johannesvollmer"
 ---
 
 Hey! In this post, I am going to present to you 
-what I have built to simplify creating regular expressions for JavaScript.
+what I have built to simplify creating regular expressions for JavaScript:
+[Regex Nodes]((https://johannesvollmer.github.io/regex-nodes/)).
 
 *Warning: The presented project is still work in progress and some features
 might be missing or may not work as intended. See the 
-[github project](https://johannesvollmer.github.io/regex-nodes/)
+[github project](https://github.com/johannesvollmer/regex-nodes)
 for more information on which features are planned.*
 
 
@@ -42,7 +43,9 @@ without having to deal with overly complex text lines.
 
 The following image shows the editor with the aforementioned regular expression.
 
-![Filter Image Tags in the "Regex Nodes" Editor]({{ site.baseurl }}/img/regex-nodes/image-tags.png)
+[
+    ![Filter Image Tags in the "Regex Nodes" Editor]({{ site.baseurl }}/img/regex-nodes/image-tags.png)
+]({{ site.baseurl }}/img/regex-nodes/image-tags.png)
 
 In the center, the white rectangles describe the hierarchy of the expression.
 The rightmost node is the top-level operator, which combine the atomic
@@ -50,12 +53,10 @@ nodes on the left hand side to a single regular expression.
 
 To construct and play around with that node setup yourself,
 simply visit [the online editor]((https://johannesvollmer.github.io/regex-nodes/)), 
-paste the expression `/<img.*?>/gim` into the "Add Nodes" text box.
+paste the expression `/<img.*?>/gim` into the "Add Nodes" text box,
+and then click the first suggestion.
 Be aware that padding spaces in the regular expression 
 will not be ignored and may lead to unexpected results.
-
-The [source code of the editor](https://github.com/johannesvollmer/regex-nodes) 
-is available on github.
 
 # Why Nodes?
 
@@ -71,8 +72,9 @@ As I have not yet done any user experience research
 on the interface design, I will explain the basic functionality here.
 
 1. __Select a node__ by clicking with your left mouse button. 
+   Selecting a node will display its regular expression at the bottom. 
    You can lock your selection to the currently selected node by toggling 
-   the padlock at the bottom left.
+   the padlock at the bottom left. 
 1. __Move a node__ by dragging with your left mouse button
 1. __Connect or disconnect properties__ by dragging with your right mouse button
 1. __Move the view__ by scrolling, or by dragging with your middle mouse button.

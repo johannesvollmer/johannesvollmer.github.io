@@ -180,7 +180,7 @@ pre {
   padding: 1rem;
   font-size: .8rem;
   line-height: 1.4;
-  overflow-x: scroll; // do not break code lines
+  overflow-x: auto; // do not break code lines
   background-color: #f9f9f9;
 }
 
