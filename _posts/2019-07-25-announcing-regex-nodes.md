@@ -45,15 +45,15 @@ The following image shows the editor with the aforementioned regular expression.
 
 [
     ![Filter Image Tags in the "Regex Nodes" Editor]({{ site.baseurl }}/img/regex-nodes/image-tags.png)
-]({{ site.baseurl }}/img/regex-nodes/image-tags.png)
+](https://johannesvollmer.github.io/regex-nodes/?expression=LzxpbWcuKj8%2BL2dpbQ%3D%3D)
 
 In the center, the white rectangles describe the hierarchy of the expression.
 The rightmost node is the top-level operator, which combine the atomic
 nodes on the left hand side to a single regular expression.
 
-To construct and play around with that node setup yourself,
+To edit a regular expression yourself,
 simply visit [the online editor](https://johannesvollmer.github.io/regex-nodes/), 
-paste the expression `/<img.*?>/gim` into the "Add Nodes" text box,
+paste the expression `/<img.*?>/gim` where it says "Add Nodes",
 and then click the first suggestion. To see how the regex works,
 you will also have to edit the example text 
 by clicking the button at the top right and paste some HTML, as 
@@ -78,11 +78,11 @@ on the interface design, I will explain the basic functionality here.
    Selecting a node will display its regular expression at the bottom. 
    You can lock your selection to the currently selected node by toggling 
    the padlock at the bottom left. 
-1. __Move a node__ by dragging with your left mouse button
-1. __Connect or disconnect properties__ by dragging with your right mouse button
+1. __Move a node__ by dragging with your left mouse button.
+1. __Connect or disconnect properties__ by dragging with your right mouse button.
 1. __Move the view__ by scrolling, or by dragging with your middle mouse button.
 1. __Add a node__ by clicking into the "Add Nodes" text field 
-   and choosing the desired node type. You can also paste a regular expression here.
+   and choosing the desired node type. You can also __paste a regular expression here__.
 1. __Edit the example text__ which is displayed in the background 
    by clicking on the button at the top right.
 1. __Undo and redo__ your actions with the arrows at the top.
