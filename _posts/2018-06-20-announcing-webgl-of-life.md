@@ -1,5 +1,5 @@
 ---
-title:          Implementing Conway's _WebGL of Life_ on the GPU in the web
+title:          Implementing the Game of Life on the GPU for the web
 description:    Simulating Conway's Game of Life on a website using the GPU
 image:          "{{ site.baseurl }}/img/webgl-of-life/thumbnail.jpg"
 logo:           "{{ site.baseurl }}/img/logo.svg"
