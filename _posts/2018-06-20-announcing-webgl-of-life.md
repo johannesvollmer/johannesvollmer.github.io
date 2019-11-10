@@ -1,14 +1,16 @@
 ---
-title: Announcing "WebGL of Life" Online GPU Simulation and Editor
-# jekyll-seo-tag
-description:  "Simulating Conway's Game of Life on a website using the GPU"
-#image:        "http://placehold.it/400x200" # why nothing visible?
-author:       "johannesvollmer"
-published: 	  false
+title:          Implementing Conway's "WebGL of Life" on the GPU in the web
+description:    Simulating Conway's Game of Life on a website using the GPU
+image:          "{{ site.baseurl }}/img/webgl-of-life/thumbnail.jpg"
+logo:           "{{ site.baseurl }}/img/logo.svg"
+author:         johannesvollmer
+published: 	    true
 ---
 
 Hey! In this post, I am going to explain some of the challenges 
-I had to face when programming Conway's Game of Life on the GPU.
+I had to face when programming 
+[Conway's Game of Life](https://johannesvollmer.github.io/webgl-of-life/)
+on the GPU.
 
 # What is this game?
 
@@ -39,7 +41,19 @@ performance implications of using JavaScript.
 
 Currently, the only way to utilize the GPU on the web is by using WebGL.
 OpenGL is used to display 2D and 3D graphics using the GPU. 
-The cell board is be a texture with each pixel representing a cell. 
-The board is rendered in WebGL for realtime performance.
-Of course, the simulation of each evolution is also computed in WebGL.
-For this purpose, I wrote a shader which 
+The current generation of cells is stored in a texture, with each pixel representing a cell. This board is rendered in WebGL for realtime performance. Of course, the simulation of each evolution is also computed in WebGL.
+
+For this purpose, I wrote a shader which transforms the current board pixel per pixel. This shader is rendered to a second texture, which afterwards contains the next generation. These textures are internally swapped after each generation. 
+
+# Fattening the Cells
+
+In the final app, each pixels contains more information than just a simple `on` or `off`, though. In RGB Textures, we have more space available to us. To simplify visualization and computation, the `green` channel of a pixel in the current board always caches the count its neighbours. Also, the `blue` channel stores the state of that cell in the previous generation. This enables interpolating between those two states, achieving a simple opacity transition, resulting in a smoother look. 
+
+# Painting the Texture
+
+Drawing cells on the board is done in JavaScript. This allows for complex board modifications in the future. Displaying the brush contents is achieved using SVG.
+
+
+# WebGL of Life
+
+Here's the finished app: [WebGL of Life](https://johannesvollmer.github.io/webgl-of-life/).

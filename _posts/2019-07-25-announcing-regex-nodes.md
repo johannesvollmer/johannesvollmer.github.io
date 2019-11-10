@@ -1,9 +1,10 @@
 ---
-title: Announcing Regex Nodes, an online Editor for Regular Expressions
-# jekyll-seo-tag
-description:  "Visualizing and editing regular expressions in the web"
-#image:        "http://placehold.it/400x200" # why nothing visible?
-author:       "johannesvollmer"
+title:          Announcing Regex Nodes, an online Editor for Regular Expressions
+description:    Visualizing and editing regular expressions in the web
+image:          "{{ site.baseurl }}/img/regex-nodes/thumbnail.png" 
+logo:           "{{ site.baseurl }}/img/logo.svg"
+author:         johannesvollmer
+published: 	    true
 ---
 
 Hey! In this post, I am going to present to you 

@@ -1,9 +1,9 @@
 ---
-title: Don't be a Bracist
-# jekyll-seo-tag
-description:  "Why the world is treating braces differently from parantheses"
-#image:        "http://placehold.it/400x200" # why nothing visible?
-author:       "johannesvollmer"
+title:          Don't be a Bracist
+description:    Why the world is treating braces differently from parantheses
+logo:           "{{ site.baseurl }}/img/logo.svg"
+author:         johannesvollmer
+published: 	    true
 ---
 
 *Note: I originally wrote this post for [dev.to](https://dev.to/ryanous/dont-be-a-bracist-2on).*
