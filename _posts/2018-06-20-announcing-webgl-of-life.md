@@ -1,5 +1,5 @@
 ---
-title:          Implementing Conway's "WebGL of Life" on the GPU in the web
+title:          Implementing Conway's _WebGL of Life_ on the GPU in the web
 description:    Simulating Conway's Game of Life on a website using the GPU
 image:          "{{ site.baseurl }}/img/webgl-of-life/thumbnail.jpg"
 logo:           "{{ site.baseurl }}/img/logo.svg"
@@ -27,8 +27,6 @@ based on the number of neighbours surrounding it.
 For example, one rule states a new cell is born 
 where exactly three neighbours are living.
 
-![A new cell being born]({{ site.baseurl }}/img/webgl-of-life/cell-is-born.svg)
-
 [Here's the english wikipedia article](https://en.wikipedia.org/w/index.php?title=Conway%27s_Game_of_Life&oldid=906060432),
 if you want to read some more.
 
@@ -45,15 +43,26 @@ The current generation of cells is stored in a texture, with each pixel represen
 
 For this purpose, I wrote a shader which transforms the current board pixel per pixel. This shader is rendered to a second texture, which afterwards contains the next generation. These textures are internally swapped after each generation. 
 
-# Fattening the Cells
+## Fattening the Cells
 
-In the final app, each pixels contains more information than just a simple `on` or `off`, though. In RGB Textures, we have more space available to us. To simplify visualization and computation, the `green` channel of a pixel in the current board always caches the count its neighbours. Also, the `blue` channel stores the state of that cell in the previous generation. This enables interpolating between those two states, achieving a simple opacity transition, resulting in a smoother look. 
+In the final app, each pixels contains more information than just a simple `on` or `off`, though. In RGB Textures, we have more space available to us. To simplify visualization and computation, the `green` channel of a pixel in the current board always caches the count its neighbours. Also, the `blue` channel stores the state of that cell in the previous generation. This enables interpolating between those two states, achieving a simple opacity transition, resulting in a smoother look. Also, while simulating, always interpolate between both generations exactly in the middle, to avoid flickering of cells that turn on and off every frame. This further smoothens the animation.
 
-# Painting the Texture
+## Painting the Texture
 
 Drawing cells on the board is done in JavaScript. This allows for complex board modifications in the future. Displaying the brush contents is achieved using SVG.
-
 
 # WebGL of Life
 
 Here's the finished app: [WebGL of Life](https://johannesvollmer.github.io/webgl-of-life/).
+
+## Features
+
+- Zoom in and out
+- Simulate cells in real time
+- Paint cells onto the board (click on the pen icon first)
+- Settings (click on the settings icon first)
+    - Custom rules
+    - Custom simulation speed
+    - Custom board size
+    - Show where a cell has been born or has died
+    - Show how many neighbours a cell has
