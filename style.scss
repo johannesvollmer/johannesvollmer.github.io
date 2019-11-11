@@ -312,17 +312,16 @@ main {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-}*/
+}
 
 .logo-column {
-  flex-shrink: 0; /* do not shrink logo */
+  flex-shrink: 0;
   width: 100px;
   padding: 12px;
   transform: translate(0px, -6px);
-}
+}*/
 
 #logo {
-  width: 100%;
   animation: introduce 0.2s ease-in normal forwards;
 }
 
