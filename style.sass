@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6
   letter-spacing: -.025rem
 
 h1
-  font-size: 3rem
+  font-size: 2rem
 
 h2
   font-size: 1.6rem
@@ -285,12 +285,14 @@ main
       background-color: white
       animation: rotate 0.2s ease-in normal forwards
       transform-origin: 0 7rem
+      // box-shadow: 400px 400px 0 0 #fff // fake motion blur
 
 @keyframes rotate
   from
     transform: rotate(0deg)
   to
     transform: rotate(-90deg)
+    // visibility: hidden
 
 #logo
   transform: scale(0.9)
@@ -307,6 +309,9 @@ main
     transform: scale(1) translate(0,0) rotate(0)
 
 header
+  h1
+    font-size: 3rem
+    
   h1, a
     margin: 0
     margin-right: 0.5rem
