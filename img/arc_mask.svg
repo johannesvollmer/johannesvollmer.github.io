@@ -7,16 +7,16 @@
             stroke: teal;
 
             stroke-dasharray: 300;
-            stroke-dashoffset: 0;
+            stroke-dashoffset: 300;
             animation: dash 5s linear forwards reverse;
         }
         
         @keyframes dash {
             to {
-                stroke-dashoffset: 300;
+                stroke-dashoffset: 0;
             }
         }
     </style>
     
-    <circle cx="0" cy="0" r="40" stroke-width="30"/>
+    <circle cx="0" cy="0" r="40" stroke-width="20"/>
 </svg>

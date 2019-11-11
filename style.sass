@@ -260,11 +260,21 @@ main
     margin-top: 2rem
 
 #mask
-  pointer-events: none
-  position: absolute
-  z-index: 100
-  top: 2.3rem
-  left: 2.3rem
+  display: none
+
+@media (min-width: 50rem)
+  #mask
+    display: block
+    pointer-events: none
+
+    grid-area: logo
+    justify-self: stretch
+    align-self: stretch
+    
+    position: absolute
+    z-index: 100
+    top: 2.3rem
+    left: 2.3rem
 
 #logo img
   animation: introduce 0.1s ease-in normal forwards
