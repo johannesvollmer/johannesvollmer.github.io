@@ -270,7 +270,7 @@ tbody tr:nth-child(odd) th {
 body {  
   display: grid;
 
-  grid-template-columns: 5rem 34rem;
+  grid-template-columns: 5rem 24rem;
   grid-template-rows: 5rem auto;
   grid-template-areas: 
     "logo  header"
@@ -312,7 +312,7 @@ header {
 }
 
 
-@media (max-width: 60rem){
+@media (max-width: 50rem){
   body {  
     display: block;
     margin: 1rem;
@@ -345,7 +345,7 @@ header {
 
 @keyframes introduce {
   from { 
-    transform: scale(1.7) translate(0,0) rotate(200deg) 
+    transform: scale(1.3) translate(0,0) rotate(100deg) 
   }
   to { 
     opacity: 1;
