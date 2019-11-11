@@ -301,9 +301,10 @@ main
       animation-duration: 0.8s
 
 @keyframes rotate
-  transform: rotate(179deg)
-to
-  transform: rotate(0deg)
+  from
+    transform: rotate(179deg)
+  to
+    transform: rotate(0deg)
 
 #logo img
   animation: introduce 0.1s ease-in normal forwards
@@ -344,8 +345,7 @@ header
     a
       color: #000
 
-      &:hover,
-      &:focus
+      &:hover, &:focus
         text-decoration: none
 
   nav a
@@ -353,8 +353,7 @@ header
     font-weight: 400
     text-transform: lowercase
 
-    &:hover,
-    &:focus
+    &:hover, &:focus
       color: #000
       text-decoration: none
 
