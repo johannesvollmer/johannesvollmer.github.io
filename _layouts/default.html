@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
-  
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600">
-  <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600">
+    <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
 
-  <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/img/favicon.png">
 
-  {% seo %}
-</head>
-<body>
-  <div class="container">
+    {% seo %}
+  </head>
+
+  <body>
+    <a id="logo" href="{{ site.baseurl }}/">
+      <img src="{{ site.baseurl }}/img/logo.svg"/>
+    </a>
+
     {{ content }}
-  </div>
-</body>
+  </body>
 </html>

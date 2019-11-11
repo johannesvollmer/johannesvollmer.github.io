@@ -1,20 +1,12 @@
 ---
 layout: default
 ---
-<div class="logo-column">
-  <a href="{{ site.baseurl }}/">
-    <img id="logo" src="{{ site.baseurl }}/img/logo.svg"/>
-  </a>
-</div>
-
-  <div class="content-column">
-  <header class="masthead">
-    <h1 class="masthead-title--small">
-      <a href="{{ site.baseurl }}/">{{ site.name }}</a>
-    </h1>
-  </header>
-  <div class="content page">
-    <h1 class="page-title">{{ page.title }}</h1>
-    {{ content }}
-  </div>
-</div>
+<header>
+  <h1 class="masthead-title--small">
+    <a href="{{ site.baseurl }}/">{{ site.name }}</a>
+  </h1>
+</header>
+<main>
+  <h1 class="page-title">{{ page.title }}</h1>
+  {{ content }}
+</main>

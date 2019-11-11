@@ -1,23 +1,15 @@
 ---
 layout: default
 ---
-<div class="logo-column">
-  <a href="{{ site.baseurl }}/">
-    <img id="logo" src="{{ site.baseurl }}/img/logo.svg"/>
-  </a>
-</div>
-
-<div class="content-column">
-  <header class="masthead">
-    <h1 class="masthead-title--small">
-      <a href="{{ site.baseurl }}/">{{ site.name }}</a>
-    </h1>
-  </header>
-  <div class="content post">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <div class="post-date">
-      <time>{{ page.date | date_to_string }}</time>
-    </div>
-    {{ content }}
+<header>
+  <h1 class="masthead-title--small">
+    <a href="{{ site.baseurl }}/">{{ site.name }}</a>
+  </h1>
+</header>
+<main>
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="post-date">
+    <time>{{ page.date | date_to_string }}</time>
   </div>
-</div>
+  {{ content }}
+</main>

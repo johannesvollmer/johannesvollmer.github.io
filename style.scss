@@ -13,6 +13,11 @@ body {
   padding: 0;
 }
 
+
+
+
+/* FORMATTING AND COLORS */
+
 html {
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
@@ -46,12 +51,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
   font-weight: 600;
   line-height: 1.1;
-  color: #333;
   letter-spacing: -.025rem;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 h2 {
@@ -254,7 +258,48 @@ tbody tr:nth-child(odd) th {
   font-size: 1.25rem;
 }
 
-.container {
+
+
+
+
+
+
+/* PAGE LAYOUT */
+
+body {  
+  display: grid;
+
+  grid-template-columns: 20vw 60vw;
+  grid-template-rows: 20vw auto;
+  grid-template-areas: 
+    "logo  header"
+    "....  content";
+    
+  grid-column-gap: 1rem 1rem;
+  
+  justify-content: center;	
+  align-content: start;	
+}
+
+#logo {
+  grid-area: logo;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+header {
+  grid-area: header;
+  justify-self: start;
+  align-self: stretch;
+}
+
+main {
+  grid-area: content;
+  justify-self: start;
+  align-self: start;
+}
+
+/*.container {
   max-width: 38rem;
   padding: 2rem 1.5rem;
   margin-left:  auto;
@@ -267,7 +312,7 @@ tbody tr:nth-child(odd) th {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-}
+}*/
 
 .logo-column {
   flex-shrink: 0; /* do not shrink logo */
@@ -278,6 +323,18 @@ tbody tr:nth-child(odd) th {
 
 #logo {
   width: 100%;
+  animation: introduce 0.2s ease-in normal forwards;
+}
+
+@keyframes introduce {
+  from { 
+    opacity: 0;
+    transform: scale(10) translate(0,0) rotate(600deg) 
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1) translate(0,0) rotate(0) 
+  }
 }
 
 
@@ -381,6 +438,10 @@ tbody tr:nth-child(odd) th {
     color: #333;
   }
 }
+
+
+
+/* SYNTAX HIGHLIGHTING */
 
 .highlight { font-weight: bold; }
 .highlight .hll { background-color: #ffffcc }
