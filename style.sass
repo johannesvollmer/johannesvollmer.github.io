@@ -267,16 +267,16 @@ main
     display: block
     pointer-events: none
     position: absolute
-    top: 2.3rem
-    left: 2.3rem
+    top: -50vw
+    left: -30vw
 
     div
       --border: 12vw
       --dimension: 60vw
       --position: 0
       box-sizing: border-box
-      width: calc((var(--dimension) - (var(--position) * var(--border)) ) * 2)
-      height: calc((var(--dimension) - (var(--position) * var(--border)) ) * 2)
+      width: calc((var(--dimension) - (var(--position) * var(--border))) * 2)
+      height: calc((var(--dimension) - (var(--position) * var(--border))) * 2)
       margin: calc(var(--dimension) - (var(--dimension) - (var(--position) * var(--border))))
       background: transparent
       border-radius: 100%
@@ -284,20 +284,18 @@ main
       border-top: calc(var(--border)*1.1) solid violet
       animation: rotate 1s linear forwards
       position: absolute
+      border-top-color: white
 
     div:nth-child(2)
       --position: 1
-      border-top-color: red
       animation-duration: 1.8s
 
     div:nth-child(3)
       --position: 2
-      border-top-color: pink
       animation-duration: 1.4s
 
     div:nth-child(4)
       --position: 3
-      border-top-color: purple
       animation-duration: 0.8s
 
 @keyframes rotate
