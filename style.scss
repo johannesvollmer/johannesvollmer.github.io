@@ -384,7 +384,7 @@ header {
 
   nav a {
     color: #aaa;
-    font-weight: 400;
+    font-weight: 600;
     text-transform: lowercase;
 
     &:hover,
@@ -429,6 +429,7 @@ header {
     margin-bottom: 1rem;
     font-size: .75rem;
     text-transform: uppercase;
+    color: #aaa;
   }
 }
 
