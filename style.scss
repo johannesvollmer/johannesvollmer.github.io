@@ -266,6 +266,7 @@ tbody tr:nth-child(odd) th {
 
 /* PAGE LAYOUT */
 
+
 body {  
   display: grid;
 
@@ -274,16 +275,6 @@ body {
   grid-template-areas: 
     "logo  header"
     "....  content";
-
-  @media (max-width: 50rem){
-    grid-template-columns: auto;
-    grid-template-rows: 5rem auto auto;
-    grid-template-areas: 
-      "logo"
-      "header"
-      "content";
-  }
-  
   
   row-gap: 4rem;
   column-gap: 2rem;
@@ -293,13 +284,6 @@ body {
 
   margin: 1rem;
   margin-top: 7rem;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; 
-  align-items: stretch; 
 }
 
 #logo {
@@ -320,27 +304,39 @@ main {
   align-self: start;
 }
 
-/*.container {
-  max-width: 38rem;
-  padding: 2rem 1.5rem;
-  margin-left:  auto;
-  margin-right: auto;
-
-  @media (min-width: 38rem){
-    padding: 5rem 1rem;
-  }
-
+header {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: stretch; 
 }
 
-.logo-column {
-  flex-shrink: 0;
-  width: 100px;
-  padding: 12px;
-  transform: translate(0px, -6px);
-}*/
+
+@media (max-width: 60rem){
+  body {  
+    display: block;
+    margin: 1rem;
+    margin-top: 4rem;
+  }
+
+  #logo {
+    position: absolute;
+    width: 100vw;
+    height: 100vw;
+    transform: scale(0.8);
+    opacity: 0.1;
+  }
+
+  header {
+    margin-top: 0rem;
+  }
+
+  main {
+    margin-top: 7rem;
+  }
+}
+
+
 
 #logo {
   animation: introduce 0.1s ease-in normal forwards;
