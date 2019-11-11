@@ -272,29 +272,17 @@ main
     display: block
     pointer-events: none
     position: absolute
-    top: -50vw
-    left: -30vw
-
-    div
-      --border: 40vw
-      --dimension: 60vw
-      --position: 0
-      box-sizing: border-box
-      width: calc((var(--dimension) - (var(--position) * var(--border))) * 2)
-      height: calc((var(--dimension) - (var(--position) * var(--border))) * 2)
-      margin: calc(var(--dimension) - (var(--dimension) - (var(--position) * var(--border))))
-      background: transparent
-      border-radius: 100%
-      border: calc(var(--border)*1.1) solid transparent
-      border-top: calc(var(--border)*1.1) solid violet
-      animation: rotate 0.4s linear forwards
-      position: absolute
-      border-top-color: white
-      border-left-color: white
+    width: 200vw
+    height: 200vh
+    top: 0
+    left: 20vw
+    background-color: white
+    animation: rotate 0.2s ease-in normal forwards
+    transform-origin: 0 7rem
 
 @keyframes rotate
   from
-    transform: rotate(179deg)
+    transform: rotate(-90deg)
   to
     transform: rotate(0deg)
 
