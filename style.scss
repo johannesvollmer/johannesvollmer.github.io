@@ -270,7 +270,7 @@ tbody tr:nth-child(odd) th {
 body {  
   display: grid;
 
-  grid-template-columns: 5rem 30rem;
+  grid-template-columns: 4.7rem 30rem;
   grid-template-rows: auto auto;
   grid-template-areas: 
     "logo  header"
@@ -290,7 +290,6 @@ body {
   grid-area: logo;
   justify-self: stretch;
   align-self: stretch;
-  transform: scale(0.8);
 }
 
 header {
