@@ -266,15 +266,17 @@ main
   #mask
     display: block
     pointer-events: none
-
-    grid-area: logo
-    justify-self: stretch
-    align-self: stretch
     
     position: absolute
-    z-index: 100
     top: 2.3rem
     left: 2.3rem
+    width: 100vw
+    height: 100vh
+
+    div
+      border-radius: 100%
+      border: 4vw solid teal
+      background: transparent
 
 #logo img
   animation: introduce 0.1s ease-in normal forwards

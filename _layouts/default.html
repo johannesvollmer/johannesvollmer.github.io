@@ -15,12 +15,18 @@
   </head>
 
   <body>
-    <img id="mask" src="{{ site.baseurl }}/img/arc_mask.svg">
-
+    <ximg xid="mask" src="{{ site.baseurl }}/img/arc_mask.svg"/>
+    
     <a id="logo" href="{{ site.baseurl }}/">
       <img src="{{ site.baseurl }}/img/logo.svg"/>
     </a>
 
     {{ content }}
+
+    <div id="mask">
+      <div width="50vw" height="50vw"></div>
+      <div width="30vw" height="30vw"></div>
+      <div width="10vw" height="10vw"></div>
+    </div>
   </body>
 </html>
