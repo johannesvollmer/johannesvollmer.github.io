@@ -19,5 +19,5 @@
         }
     </style>
     
-    <path d="M 100 0 A 1 1 0 0 0 0 -100" stroke-width="20"/>
+    <circle cx="0" cy="0" r="100" stroke-dasharray="300" stroke-dashoffset="300" stroke-width="20"/>
 </svg>
