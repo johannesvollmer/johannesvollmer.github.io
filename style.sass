@@ -276,7 +276,7 @@ main
     left: -30vw
 
     div
-      --border: 12vw
+      --border: 40vw
       --dimension: 60vw
       --position: 0
       box-sizing: border-box
@@ -287,22 +287,10 @@ main
       border-radius: 100%
       border: calc(var(--border)*1.1) solid transparent
       border-top: calc(var(--border)*1.1) solid violet
-      animation: rotate 0.3s linear forwards
+      animation: rotate 0.4s linear forwards
       position: absolute
       border-top-color: white
       border-left-color: white
-
-    div:nth-child(2)
-      --position: 1
-      animation-duration: 0.3s
-
-    div:nth-child(3)
-      --position: 2
-      animation-duration: 0.2s
-
-    div:nth-child(4)
-      --position: 3
-      animation-duration: .1s
 
 @keyframes rotate
   from
