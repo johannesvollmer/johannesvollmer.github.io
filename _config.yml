@@ -12,8 +12,7 @@ author:             "johannesvollmer"
 #    publisher:      1234
 
 # URL
-baseurl:            ""
-#baseurl:            "" #For Root Domain
+baseurl:            "" #For Root Domain
 #permalink:          /:year/:month/:day/:title/
 permalink:          /:year/:title/
 
