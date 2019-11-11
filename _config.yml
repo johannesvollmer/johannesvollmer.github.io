@@ -1,5 +1,5 @@
 # Basic
-name:               "JOHANNES VOLLMER"
+name:               "Johannes Vollmer"
 description:        "Not yet famous enough for hand-signed distance fields"
 
 # jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
@@ -24,15 +24,19 @@ markdown:           kramdown
 nav:
   - name:           "Github"
     href:           "https://github.com/johannesvollmer"
+    external:       true
 
   - name:           "About"
     href:           "/about"
+    external:       false
     
   - name:           "Game of Life"
     href:           "/webgl-of-life"
+    external:       true
     
   - name:           "Regex Nodes"
     href:           "/regex-nodes"
+    external:       true
 
 # Sass
 sass:

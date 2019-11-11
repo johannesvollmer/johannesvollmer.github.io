@@ -3,27 +3,31 @@ layout: default
 ---
 <header>
   <h1 class="title">
-    <a href="{{ site.baseurl }}/">{{ site.name }}<span></span></a>
+    <a href="{{ site.baseurl }}/">{{ site.name }}</a>
   </h1>
   <nav>
     {% for nav in site.nav %}
-    <a href="{{ nav.href }}" target="_blank" rel="noopener noreferrer">&nbsp;{{ nav.name }}&nbsp;</a>
+      {% if nav.external %}
+        <a href="{{ nav.href }}" target="_blank" rel="noopener noreferrer">{{ nav.name }}</a>
+      {% else %}
+        <a href="{{ nav.href }}">{{ nav.name }}</a>
+      {% endif %}
     {% endfor %}
   </nav>
 </header>
 <main>
   {% if site.posts.size == 0 %}
-  <h2>No post here yet</h2>
+    <h2>No post here yet</h2>
   {% else %}
-  {% for post in site.posts %}
-  <div class="list-item">
-    <h2 class="list-post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-    </h2>
-    <div class="list-post-date">
-      <time>{{ post.date | date_to_string }}</time>
+    {% for post in site.posts %}
+    <div class="list-item">
+      <h2 class="list-post-title">
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+      </h2>
+      <div class="list-post-date">
+        <time>{{ post.date | date_to_string }}</time>
+      </div>
     </div>
-  </div>
-  {% endfor %}
+    {% endfor %}
   {% endif %}
 </main>
