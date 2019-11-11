@@ -269,18 +269,30 @@ tbody tr:nth-child(odd) th {
 body {  
   display: grid;
 
-  grid-template-columns: 5rem 60vw;
+  grid-template-columns: 5rem 34rem;
   grid-template-rows: 5rem auto;
   grid-template-areas: 
     "logo  header"
     "....  content";
-    
+
+  @media (max-width: 50rem){
+    grid-template-columns: auto;
+    grid-template-rows: 5rem auto auto;
+    grid-template-areas: 
+      "logo"
+      "header"
+      "content";
+  }
+  
+  
   row-gap: 4rem;
   column-gap: 2rem;
   
   justify-content: center;	
   align-content: start;	
-  padding-top: 7rem;
+
+  margin: 1rem;
+  margin-top: 7rem;
 }
 
 header {
