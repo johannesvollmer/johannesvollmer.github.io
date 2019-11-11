@@ -5,6 +5,8 @@
         circle {
             fill: transparent;
             stroke: black;
+
+            
         }
     </style>
     
