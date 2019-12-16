@@ -25,6 +25,18 @@ nav:
     href:           "https://github.com/johannesvollmer"
     external:       true
 
+  - name:           "Artstation"
+    href:           "https://www.artstation.com/johannesvollmer"
+    external:       true
+
+  - name:           "Soundcloud"
+    href:           "https://soundcloud.com/johannesvollmer"
+    external:       true
+
+  - name:           "LinkedIn"
+    href:           "https://www.linkedin.com/in/johannes-vollmer"
+    external:       true
+
   - name:           "About"
     href:           "/about"
     external:       false
