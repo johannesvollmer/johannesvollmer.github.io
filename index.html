@@ -18,7 +18,7 @@ layout: default
   {% for project in site.projects %}
       <a href="{{ project.href }}"  target="_blank" rel="noopener noreferrer" class="project">
         <h3>{{ project.name }}</h3>
-        <p>{{ project.description | markdownify }}</p>
+        {{ project.description | markdownify }}
       </a>
   {% endfor %}
   
