@@ -21,13 +21,13 @@ markdown:           kramdown
 
 # Navigation
 nav:
-  - name:           "Github"
+  - name:           "GitHub"
     href:           "https://github.com/johannesvollmer"
 
-  - name:           "Artstation"
+  - name:           "ArtStation"
     href:           "https://www.artstation.com/johannesvollmer"
 
-  - name:           "Soundcloud"
+  - name:           "SoundCloud"
     href:           "https://soundcloud.com/johannesvollmer"
 
   - name:           "LinkedIn"
