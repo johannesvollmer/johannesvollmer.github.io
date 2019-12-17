@@ -40,7 +40,9 @@ nav:
   - name:           "About"
     href:           "/about"
     external:       false
-    
+
+# Projects
+projects:
   - name:           "Game of Life"
     href:           "/webgl-of-life"
     external:       true
@@ -48,7 +50,7 @@ nav:
   - name:           "Regex Nodes"
     href:           "/regex-nodes"
     external:       true
-
+    
 # Sass
 sass:
   style:            :compressed
