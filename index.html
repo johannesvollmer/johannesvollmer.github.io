@@ -7,11 +7,7 @@ layout: default
   </h1>
   <nav>
     {% for nav in site.nav %}
-      {% if nav.external %}
-        <a href="{{ nav.href }}" target="_blank" rel="noopener noreferrer">{{ nav.name }}</a>
-      {% else %}
-        <a href="{{ nav.href }}">{{ nav.name }}</a>
-      {% endif %}
+      <a href="{{ nav.href }}" target="_blank" rel="noopener noreferrer">{{ nav.name }}</a> 
     {% endfor %}
   </nav>
 </header>
@@ -20,7 +16,7 @@ layout: default
   
   <h2>Projects</h2>
   {% for project in site.projects %}
-      <a href="{{ project.href }}" class="project">
+      <a href="{{ project.href }}"  target="_blank" rel="noopener noreferrer" class="project">
         <h3>{{ project.name }}</h3>
         <p>{{ project.description | markdownify }}</p>
       </a>
