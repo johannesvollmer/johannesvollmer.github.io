@@ -21,20 +21,20 @@ layout: default
   <h2>Projects</h2>
   {% for project in site.projects %}
       <a href="{{ project.href }}" class="project">
-        <h2>{{ project.name }}</h2>
+        <h3>{{ project.name }}</h3>
         <p>{{ project.description | markdownify }}</p>
       </a>
   {% endfor %}
   
   <h2>Blog</h2>
   {% if site.posts.size == 0 %}
-    <h2>No post here yet</h2>
+    <h3>No post here yet</h3>
   {% else %}
     {% for post in site.posts %}
     <div class="list-item">
-      <h2 class="list-post-title">
+      <h3 class="list-post-title">
         <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-      </h2>
+      </h3>
       <div class="list-post-date">
         <time>{{ post.date | date_to_string }}</time>
       </div>
