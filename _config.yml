@@ -35,7 +35,7 @@ projects:
     description:    "A node-based online editor for your regular expressions"
     
   - name:           "JS Sadness"
-    href:           "www.js-sadness.com"
+    href:           "https://www.js-sadness.com"
     description:    "An online archive of things that make us sad in JavaScript"
     
   - name:           "WebGL of Life"
