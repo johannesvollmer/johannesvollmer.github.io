@@ -17,6 +17,16 @@ layout: default
 </header>
 
 <main>
+  
+  <h2>Projects</h2>
+  {% for project in site.projects %}
+      <a href="{{ project.href }}" class="project">
+        <h2>{{ project.name }}</h2>
+        <p>{{ project.description | markdownify }}</p>
+      </a>
+  {% endfor %}
+  
+  <h2>Blog</h2>
   {% if site.posts.size == 0 %}
     <h2>No post here yet</h2>
   {% else %}
