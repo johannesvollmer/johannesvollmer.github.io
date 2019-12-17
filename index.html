@@ -14,7 +14,7 @@ layout: default
 
 <main>
   
-  <h2>&gt; Projects</h2>
+  <h2>PROJECTS</h2>
   {% for project in site.projects %}
       <a href="{{ project.href }}"  target="_blank" rel="noopener noreferrer" class="project">
         <h3>{{ project.name }}</h3>
@@ -22,7 +22,7 @@ layout: default
       </a>
   {% endfor %}
   
-  <h2>&gt; Blog</h2>
+  <h2>BLOG</h2>
   {% if site.posts.size == 0 %}
     <h3>No post here yet</h3>
   {% else %}
