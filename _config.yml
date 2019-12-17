@@ -38,12 +38,15 @@ projects:
     
   - name:           "Regex Nodes"
     href:           "/regex-nodes"
+    description:    "A node-based online editor for your regular expressions"
     
   - name:           "JS Sadness"
     href:           "www.js-sadness.com"
+    description:    "An online archive of things that make us sad in JavaScript"
     
   - name:           "Game of Life"
     href:           "/webgl-of-life"
+    description:    "A price-winning online 'Game of Life' simulation which utilizes the GPU"
     
 # Sass
 sass:
