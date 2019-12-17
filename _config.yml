@@ -2,14 +2,8 @@
 name:               "Johannes Vollmer"
 description:        "Not yet famous enough for hand-signed distance fields"
 
-# jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
 url:                "//johannesvollmer.github.io"
 author:             "johannesvollmer"
-#twitter:
-#  username:         "gfjaru"
-#facebook:
-#  app_id:           1234
-#    publisher:      1234
 
 # URL
 baseurl:            "" #For Root Domain
@@ -44,7 +38,7 @@ projects:
     href:           "www.js-sadness.com"
     description:    "An online archive of things that make us sad in JavaScript"
     
-  - name:           "Game of Life"
+  - name:           "WebGL of Life"
     href:           "/webgl-of-life"
     description:    "A price-winning online 'Game of Life' simulation which utilizes the GPU"
     
