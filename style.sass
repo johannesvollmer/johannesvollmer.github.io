@@ -216,8 +216,8 @@ body
   display: grid
 
   grid-template-columns: 4.7rem 30rem
-  grid-template-rows: auto auto
-  grid-template-areas: "logo  header" "....  content"
+  grid-template-rows: auto auto auto
+  grid-template-areas: "logo  header" "....  content" "footer  footer"
 
   column-gap: 2rem
 
@@ -239,6 +239,11 @@ header
 
 main
   grid-area: content
+  justify-self: start
+  align-self: start
+
+.footer
+  grid-area: footer
   justify-self: start
   align-self: start
 
@@ -398,7 +403,8 @@ a.project
 .footer
   padding: 2em
   background-color: #eee
-  color: #777
+  .footer-item
+    color: #777
 
 
 // SYNTAX HIGHLIGHTING 
