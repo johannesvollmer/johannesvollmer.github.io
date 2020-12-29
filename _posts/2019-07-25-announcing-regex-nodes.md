@@ -37,7 +37,7 @@ case insensitive and to look for multiple matches, not just for the first.
 
 # The Approach of the Editor
 
-The editor visualizes all components of a regex with a separate "Node".
+The editor visualizes each component of a given regex with a separate "Node".
 Those atomic components can be composed by connecting the properties of the nodes.
 That way, you can compose complex regular expressions 
 without having to deal with overly complex text lines.

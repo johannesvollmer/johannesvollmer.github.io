@@ -38,10 +38,14 @@ projects:
     href:           "/webgl-of-life"
     description:    "A price-winning online 'Game of Life' simulation which utilizes the GPU"
     
-  - name:           "JS Sadness"
-    href:           "https://www.js-sadness.com"
-    description:    "An online archive of things that make us sad in JavaScript"
+  # - name:           "JS Sadness"
+  #   href:           "https://www.js-sadness.com"
+  #   description:    "An online archive of things that make us sad in JavaScript"
     
+footer:
+  - name: Legal Notice
+    href: "/legal-notice"
+
 # Sass
 sass:
   style:            :compressed
