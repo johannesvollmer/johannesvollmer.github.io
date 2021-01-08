@@ -48,7 +48,8 @@ footer:
 
 # Sass
 sass:
-  style:            :compressed
+  sass_dir:         sass
+  style:            compressed
 
 # Scopes
 defaults:
