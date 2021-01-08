@@ -12,6 +12,7 @@ permalink:          /:year/:title/
 
 # Markdown
 markdown:           kramdown
+highlighter:        rouge
 
 # Navigation
 nav:
