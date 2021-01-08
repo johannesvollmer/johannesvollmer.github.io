@@ -211,8 +211,8 @@ tbody tr:nth-child(odd) th
 
 body
   width: 100%
-  height: 100%
-
+  padding: 1rem
+  padding-top: 7rem
   display: grid
 
   grid-template-columns: 4.7rem 30rem
@@ -224,8 +224,6 @@ body
   justify-content: center
   align-content: start
 
-  margin: 1rem
-  margin-top: 7rem
 
 #logo
   grid-area: logo
@@ -385,10 +383,12 @@ header
   a
     color: #000
 
-h2
+h2.landing-section
   margin-top: 2em
   margin-bottom: 1em
-    
+  color: #eee
+
+
 a.project
   color: #000
   text-decoration: none 
@@ -408,3 +408,6 @@ a.project
     color: #888
     text-transform: uppercase
 
+
+
+@import 'syntax'
