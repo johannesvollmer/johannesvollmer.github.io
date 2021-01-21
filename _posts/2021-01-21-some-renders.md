@@ -9,22 +9,22 @@ published: 	    true
 Hey! Even though I love programming, there's other things I like to do. Here's some Images I created using 3D software such as blender or Maya. They are sorted by date, the latest ones first.
 
 ## 2020: Marbles
-![The Marble]({{ site.baseurl }}/img/marbles.png)
+![The Marble]({{ site.baseurl }}/img/gallery/marbles.png)
 
 ## 2018: Mechagon
-<iframe width="100%" height="auto" src="https://www.youtube.com/embed/xa0Ispl2odU" frameborder="0" allowfullscreen></iframe>
+<iframe width="1080" height="720" src="https://www.youtube.com/embed/xa0Ispl2odU" frameborder="0" allowfullscreen></iframe>
 
 ## 2016: Old Visitor
-![The Visitor]({{ site.baseurl }}/img/visitor.png)
+![The Visitor]({{ site.baseurl }}/img/gallery/visitor.png)
 
 ## 2015: Sheep Island
-![The Island]({{ site.baseurl }}/img/island.jpg)
+![The Island]({{ site.baseurl }}/img/gallery/island.jpg)
 
 ## 2014: Cyberpunk Harley
-![The Motorbike]({{ site.baseurl }}/img/harley.jpg)
+![The Motorbike]({{ site.baseurl }}/img/gallery/harley.jpg)
 
 ## 2013: Flintlock Pistol
-![The Pistol]({{ site.baseurl }}/img/pistol.png)
+![The Pistol]({{ site.baseurl }}/img/gallery/pistol.png)
 
 ## 2013: Ancient Civilization
-![The Pharao]({{ site.baseurl }}/img/pharao.jpg)
+![The Pharao]({{ site.baseurl }}/img/gallery/pharao.jpg)
