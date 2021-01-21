@@ -13,7 +13,7 @@ Hey! Even though I love programming, there's other things I like to do. Here's s
 blender | eevee | affinity photo
 
 ## 2018: Mechagon
-<iframe width="1080" height="720" src="https://www.youtube.com/embed/xa0Ispl2odU" frameborder="0" allowfullscreen></iframe>  
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/xa0Ispl2odU" frameborder="0" allowfullscreen></iframe>  
 blender | maya | arnold | 3dequalizer | nuke
 
 ## 2016: Old Visitor
