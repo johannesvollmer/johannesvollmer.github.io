@@ -12,9 +12,7 @@ This website does not store personal data.
 ### Impressum
 *Angaben gemäß § 5 TMG*
 
-Johannes Vollmer  
-Erwitterstr. 4, 59557 Lippstadt, Deutschland  
-contact@johannesvollmer.com  
+{% gist 5e33f649830a38ff6e8b851d33f6657f %} 
 
 ### Haftungsausschluss
 
