@@ -9,7 +9,7 @@ published: 	    true
 Hey! Even though I love programming, there's other things I like to do. Here's some Images I created using 3D software such as blender or Maya. They are sorted by date, the latest ones first.
 
 ## 2020: Marbles
-![The Marble]({{ site.baseurl }}/img/gallery/marbles.png)
+![The Marble]({{ site.baseurl }}/img/gallery/marbles.jpg)
 blender | eevee | affinity photo
 
 ## 2018: Mechagon
@@ -17,7 +17,7 @@ blender | eevee | affinity photo
 blender | maya | arnold | 3dequalizer | nuke
 
 ## 2016: Old Visitor
-![The Visitor]({{ site.baseurl }}/img/gallery/visitor.png)
+![The Visitor]({{ site.baseurl }}/img/gallery/visitor.jpg)
 blender | maya | arnold | affinity photo
 
 ## 2015: Sheep Island
@@ -29,7 +29,7 @@ blender | cycles | photoshop
 blender | cycles | photoshop
 
 ## 2013: Flintlock Pistol
-![The Pistol]({{ site.baseurl }}/img/gallery/pistol.png)
+![The Pistol]({{ site.baseurl }}/img/gallery/pistol.jpg)
 blender | cycles | photoshop
 
 ## 2013: Ancient Civilization
