@@ -6,7 +6,7 @@ author:         johannesvollmer
 published: 	    true
 ---
 
-## Portfolio: Design
-
-Here's a plain old PDF: [Download Portfolio]({{ site.baseurl }}/img/vollmer-johannes-portfolio.pdf).   
 The contents include UX Design, Visual Design and 3D Visualization.
+
+# PDF Version
+Here's a plain old PDF: [Download Portfolio]({{ site.baseurl }}/img/vollmer-johannes-portfolio.pdf).   
