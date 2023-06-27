@@ -5,16 +5,9 @@ logo:           "{{ site.baseurl }}/img/logo.svg"
 author:         johannesvollmer
 published: 	    false
 ---
-<!-- #1 focus lead (probably narrative, anectode) 3-4§ -->
-<!-- #2 nut graph 2-3§ -->
-<!-- #3 body of story -->
-<!-- #4 kicker -->
 
 
-
-
-
-# ABOUT
+<!-- 
 
 title:
 - Taming Unity: How to stay on top
@@ -27,6 +20,7 @@ title:
 - Fixing Unity's Shortcomings Using a Little Bit of Dark Magic
 - X questionable Strategies regain your Dominance over Unity
 - X Tools I wish I had created right at the start
+- Your Normal Map is not marked as Normal Map!
 
 audience: 
     unity junior dev
@@ -93,15 +87,24 @@ examples for missing exceptions in unity:
 - when scene loading fails, gives you a scene object that has the invalid flag set
 - component not found on object
 it's a design basic rule that the user should not be forced to remember doing a thing, "if only we had a computer to do such tedium for me" (https://eev.ee/blog/2016/12/01/lets-stop-copying-c/)
+ -->
+
+# Content
+
+<!-- #1 focus lead (probably narrative, anectode) 3-4§ -->
 
 
 # "Your Normal Map is not marked as Normal Map!"
-Working with Unity can be ... frustrating at times. When I started working full time with Unity, before releasing, I manually went through the Textures and checked their Settings. "All normal maps set to the texture type Normal Map?" Usually, Unity warns you when you incorrectly use a color map in a normal map slot. But it does so only for the Standard Shaders, not in your custom Shadergraph Shaders, which we have a lot of. Some random feature missing, like the last puzzle piece missing in an otherwise complete picure, is a common theme in Unity. Actually, the vast majority of this article solves problems you would expect Unity to have solved already. But we'll get to that.
+Working with Unity can be ... frustrating at times. 
+
+When I started working full time with Unity, before releasing, I manually went through the Textures and checked their Settings. "Are all the normal maps set to the texture type Normal Map?" Usually, Unity warns you, when you incorrectly use a normal map slot. But it does so only for the Standard Shaders, not in your custom Shadergraph Shaders, which we have a lot of. (Some random feature missing, like the last puzzle piece missing in an otherwise complete picure, is a common theme in Unity. (Actually, the vast majority of this article solves problems you would expect Unity to have solved already. But we'll get to that.))
 
 Of course, I knew from the start that this manual process was absolutely horrible. So one day, I quickly whipped up a script that checks the texture settings. First it only checked the texture setting based on the file name, on button click. But over time, I improved it, and now it also checks whether all textures used in a "normal" slot in any shadergraph material are actually normal maps. The script runs when any texture assets are changed, and also before building the app. So you don't even notice its existence, apart from all textures always being correct.
 
 To this day, my 3D Artist coworker has praised this script multiple times. It prevented errors and made his life easier. This is the ultimate compliment. That's why we're programmers, to automate tedious things! Excellent!
 
+
+<!-- #2 nut graph 2-3§ -->
 
 
 # What's this article about?
@@ -127,7 +130,8 @@ By extensive use of extension methods.
 2. Use Exceptions, without exception
 3. Raise the level of abstraction
 
-Let me go into detail.
+
+<!-- #3 body of story -->
 
 
 # Scripting the Editor
@@ -150,26 +154,47 @@ These techniques are useful across all aspects in Unity. Use them whenever you s
 
 This article has been pretty harsh on Unity so far, and will be going further. So let's take a moment to be thankful for those extensive scripting possibilities. Thanks!
 
-### Bonus Content
-In addition to generating assets, you can edit assets using code. For example, I wrote a script that automatically keeps all assets in one folder assigned to an Asset Bundle, and deassigns all Assets outside that folder.
+
 
 ## Validate Assets with Code
 Earlier, I said that we can write code that verifies other code. Perhaps you thought, can't we verify Assets too, using code? Yes! Not only can we do it, we absolutely __should do it__.
 
+### Texture Settings
+For example, I wrote a script that checks for suspicious texture settings. It checks whether texture that look like normal maps actually have the normal map setting, but also makes sure that non-color textures use linear color space.
 
-For example, I wrote a script that checks for suspicious texture settings.
+### Assign Assets to Asset Bundles Automatically
+In addition to generating assets, you can edit assets using code. For example, I wrote a script that automatically keeps all assets in one folder assigned to an Asset Bundle, and deassigns all Assets outside that folder.
 
+### Check for Missing Scripts and Unassigned Script Variables
+It was a common error in the project that some variable was exposed in the editor, but I forgot to assign it before launching the app to my mobile device. Furthermore, missing assignments and missing scripts can occur regularly when working with version control in Unity. What script in your scene could go missing without breaking your app? None in my project. However, if something goes wrong, Unity will not complain. There is no way to make Unity complain, even for release builds. What?! 
+
+I don't know about you, but I certainly don't want a merge conflict to break the release build, silently! So I had to do it myself. 
+
+
+### How to do it
 Often, those scripts will want to go through all assets one by one, but not all assets, because you probably don't want to include assets from third party packages.
 To solve this, I used a custom ScriptableObject named `CheckAssetsInFolder`. Then, whenever some script wants to crawl all assets, they look for those ScriptableObjects, and use their folders as root folders. Or, when any asset changed, filter the list of changed assets and only process the assets if they are in any of the marked folders.
+
+Those scripts typically run before the build. They also typically include a unit test, so they are also part of the test suite.
+
+Furthermore, it is not as simple as opening a scene. As we have multiple Unity projects but want to reuse our assets, most of them come from a custom package. For some curious reason, Unity can't open a scene file from a package, because those files are read only. Why does opening a scene automatically and always need write access to the file? I don't know. Anyways, the workaround is to temporarily copy that scene into the Assets folder. Great! I factored that out into a function.
+
+Here are some key sections from the scripts:
+```cs
+
+```
+
+This is literally the code in the project. As you can see, this code uses a lot of abstraction on top of the cumbersome Unity API. For example, the path class can be seen in action here. The `Action<Scene> check` argument will be called for all scenes in the project.
 
 
 ## Custom Types
 
 A disproportionate amount of the bugs that appeared while developing those scripts were due to some malformed path string. I really didn't want to do it for a long time, but in the end I gave in, and created an appropriate `Path` type. Since then, I have no regrets, and zero bugs due to path concatenation slashes not matching up.
 
-I could not find pretty standard path functionality in neither Unity nor C#, such as testing whether some path is a child of another path. Can you believe it? Maybe I just didn't find it. 
+I could not find pretty standard path functionality in neither Unity nor C#, such as testing whether some path is a child of another path. Can you believe it? Unity uses strings all over the place. Get your stringly typed API out of my way!
 
 
 # Performance
 This doesn't mean the suggested code is slow. It means that I most of the code was not used in performance-critical sections. When you notice a performance problem, you should profile and optimize that particular code.
 
+<!-- #4 kicker -->
