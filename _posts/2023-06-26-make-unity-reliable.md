@@ -165,7 +165,7 @@ For example, I wrote a script that checks for suspicious texture settings. It ch
 ### Assign Assets to Asset Bundles Automatically
 In addition to generating assets, you can edit assets using code. For example, I wrote a script that automatically keeps all assets in one folder assigned to an Asset Bundle, and deassigns all Assets outside that folder.
 
-### Check for Missing Scripts and Unassigned Script Variables
+### Check for Missing Prefabs, Missing Scripts and Unassigned Script Variables
 It was a common error in the project that some variable was exposed in the editor, but I forgot to assign it before launching the app to my mobile device. Furthermore, missing assignments and missing scripts can occur regularly when working with version control in Unity. What script in your scene could go missing without breaking your app? None in my project. However, if something goes wrong, Unity will not complain. There is no way to make Unity complain, even for release builds. What?! 
 
 I don't know about you, but I certainly don't want a merge conflict to break the release build, silently! So I had to do it myself. 
@@ -180,9 +180,93 @@ Those scripts typically run before the build. They also typically include a unit
 Furthermore, it is not as simple as opening a scene. As we have multiple Unity projects but want to reuse our assets, most of them come from a custom package. For some curious reason, Unity can't open a scene file from a package, because those files are read only. Why does opening a scene automatically and always need write access to the file? I don't know. Anyways, the workaround is to temporarily copy that scene into the Assets folder. Great! I factored that out into a function.
 
 Here are some key sections from the scripts:
-```cs
 
+```cs
+[CreateAssetMenu(fileName = "Test Assets in Folder", menuName = "ScriptableObjects/Test Assets in Folder", order = 1)]
+public class TestAssetsInFolder : ScriptableObject {
+    public static IEnumerable<Path> AllTestedFolders() =>
+        EditorPaths.FindAnyAssetsOfType<TestAssetsInFolder>()
+            .Select(asset => asset.Parent());
+}
 ```
+
+After loading the scene in the editor, we have access to regular `GameObject`s, just like when running the game.
+
+```cs
+[Test]
+public void TestAllSceneAndPrefabFiles() {
+    var tmpPath = EditorPaths.Assets.Then("tmp-copy-of-readonly-scene-3451812739487389.unity");
+    
+    try {
+        EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo(); // in case this test is executed in isolation
+        InspectAssets.ForAllObjectsInScenesAndPrefabs(
+            TestAssetsInFolder.AllTestedFolders().ToArray(),
+            tmpPath, SceneTests.CheckGameObject
+        );
+    }
+    finally {
+        tmpPath.TryDeleteAsset();
+        EditorUtility.UnloadUnusedAssetsImmediate(true);
+    }
+}
+
+private static void CheckGameObject(GameObject gameObject) {
+    SceneTests.CheckGameObjectForMissingPrefabs(gameObject);
+    SceneTests.CheckGameObjectMembers(gameObject);
+}
+```
+
+The above code goes through all the game objects in all the assets to find suspicious data.
+
+```cs
+private static void CheckGameObjectForMissingPrefabs(GameObject gameObject) {
+    // lul https://forum.unity.com/threads/detecting-missing-nested-prefab.697562/
+    if (gameObject.name.ExactlyEndsWith("(Missing Prefab)")) {
+        throw new Exception(
+            $"Missing Prefab: \"{gameObject.name}\"\n"
+            + $"in \"{gameObject.scene.path}\": "
+            + $"{gameObject.LocationInHierarchy()}"
+        );
+    }
+
+    gameObject.GetDirectChildren().ForEach(SceneTests.CheckGameObjectForMissingPrefabs);
+}
+
+private static void CheckGameObjectMembers(GameObject gameObject) {
+    var components = gameObject.GetComponents<MonoBehaviour>();
+    
+    foreach (var component in components) {
+        if (component == null) throw new UnassignedScriptException(gameObject);
+        if (component is ExpectValidInEditor validate) validate.ExpectValidInEditor();
+        SceneTests.CheckComponentMembers(component);
+    }
+    
+    gameObject.GetDirectChildren().ForEach(SceneTests.CheckGameObjectMembers);
+}
+```
+
+The code above finds missing Prefabs and missing scripts.
+
+We don't check all the members though, only those marked with a custom attribute. This is what a typical script in our project looks like:
+```cs
+public class SetMaterialFloat: MonoBehaviour {
+        
+    [SerializeField]
+    [ExpectNotEmptyInEditor]
+    private string uniformName;
+
+    [SerializeField]
+    [ExpectAssignedInEditor]
+    private Material material;
+
+    [SerializeField]
+    [ExpectAssignedInEditor]
+    private new Renderer renderer;
+
+    // ...
+}
+```
+Those fields will be checked using reflection. This is surprisingly fast, perhaps  because it's cached after the first component of any given type is encountered.
 
 This is literally the code in the project. As you can see, this code uses a lot of abstraction on top of the cumbersome Unity API. For example, the path class can be seen in action here. The `Action<Scene> check` argument will be called for all scenes in the project.
 
