@@ -1,5 +1,5 @@
 ---
-title:          "Porftolio: Design"
+title:          "Portfolio: Design"
 description:    It's a static PDF... bummer!
 logo:           "{{ site.baseurl }}/img/logo.svg"
 author:         johannesvollmer
